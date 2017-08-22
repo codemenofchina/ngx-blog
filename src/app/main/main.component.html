@@ -1,0 +1,56 @@
+<!-- top -->
+<div class="top">
+  <div style="min-width: 1300px">
+    <div style="float: left">
+      <ul class="nav">
+        <li class="dropdown">
+          <a routerLink="blogs" class="navbar-brand navbar-brand-my">MyBlog</a>
+        </li>
+        <li routerLinkActive="active" class="dropdown">
+          <a routerLink="blogs" class="navbar-brand navbar-brand-my">动态</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="echart" class="navbar-brand navbar-brand-my">集成图表</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="map" class="navbar-brand navbar-brand-my">高德地图</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="jquery" class="navbar-brand navbar-brand-my">集成jQuery</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="jsplumb" class="navbar-brand navbar-brand-my">集成jsplumb</a>
+        </li>
+      </ul>
+    </div>
+    <div style="float: right">
+      <ul *ngIf="!currentUser?.userName" style="float: right" class="nav">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="dropdown" >
+          <a routerLink="user/login" class="navbar-brand navbar-brand-my">登录</a>
+        </li>
+        <li routerLinkActive="active" class="dropdown">
+          <a routerLink="user/register" class="navbar-brand navbar-brand-my">注册</a>
+        </li>
+      </ul>
+      <ul *ngIf="currentUser?.userName" style="float: right" class="nav">
+        <li routerLinkActive="active" class="dropdown">
+          <a routerLink="user" class="navbar-brand navbar-brand-my">欢迎你：{{currentUser?.userName}}</a>
+        </li>
+        <li routerLinkActive="active" class="dropdown">
+          <a routerLink="manage" class="navbar-brand navbar-brand-my">管理后台</a>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0);" (click)="doLogout()" class="navbar-brand navbar-brand-my">登出</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<!-- main -->
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+<div class="bottom">
+  bottom
+</div>
