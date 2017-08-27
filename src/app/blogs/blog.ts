@@ -5,4 +5,5 @@ export class Blog {
   blogId: string;
   title: string;
   time: string;
+  content: string;
 }

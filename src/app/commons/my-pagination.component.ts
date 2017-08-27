@@ -7,25 +7,26 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   selector: 'app-pagination',
   template: `
     <pagination
-      boundaryLinks]="true"
-      totalItems]="totalItems"
+      [boundaryLinks]="true"
+      [totalItems]="totalItems"
       [(ngModel)]="currentPage"
       previousText="&lsaquo;"
       nextText="&rsaquo;"
       firstText="&laquo;"
-      lastText="&raquo;">
+      lastText="&raquo;"
+      (pageChanged)="pageChanged($event)">
     </pagination>
   `
 })
 export class MyPaginationComponent {
   @Input()
-  public totalItems = 64;
-  @Output()
-  public currentPage = new EventEmitter();
-  public smallnumPages = 0;
+  totalItems = 0;
+  currentPage: number;
 
-  public pageChanged(event: any): void {
-    this.currentPage.emit(event);
-    console.log(event);
+  @Output()
+  page = new EventEmitter();
+
+  public pageChanged(event) {
+    this.page.emit(event.page);
   }
 }

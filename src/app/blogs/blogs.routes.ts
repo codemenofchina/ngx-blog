@@ -4,6 +4,8 @@
 import {RouterModule, Routes} from '@angular/router';
 import {BlogsComponent } from './blogs.component';
 import {BlogListComponent } from './blog-list.component';
+import {BlogWriteComponent } from './blog-write.component';
+import {BlogUpdateComponent } from './blog-update.component';
 import {NgModule} from '@angular/core';
 const blogsRoutes: Routes = [
   {
@@ -13,6 +15,14 @@ const blogsRoutes: Routes = [
       {
         path: '',
         component: BlogListComponent
+      },
+      {
+        path: 'write',
+        component: BlogWriteComponent
+      },
+      {
+        path: 'update/:id',
+        component: BlogUpdateComponent
       }
     ]
   }
