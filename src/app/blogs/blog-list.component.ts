@@ -30,6 +30,7 @@ import {Blog} from './blog';
           <div class="col-md-3">time:{{blog.time}}</div>
           <div class="col-md-2">
             <button class="btn btn-outline-success" type="button" routerLink="update/{{blog.blogId}}" >修改</button>
+            <app-button-modal-component></app-button-modal-component>
           </div>
           <hr/>
         </div>

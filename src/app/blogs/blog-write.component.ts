@@ -3,8 +3,7 @@
  */
 import {Component, OnInit} from '@angular/core';
 
-import './ckeditor.loader';
-import 'ckeditor';
+// import 'ckeditor';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Blog} from './blog';
 @Component({
@@ -25,7 +24,7 @@ import {Blog} from './blog';
           </div>
         </div>
         <div>
-          <ckeditor formControlName="content" [(ngModel)]="blog.title">
+          <ckeditor [config]="{extraPlugins: 'divarea'}" formControlName="content" [(ngModel)]="blog.title">
           </ckeditor>
         </div>
         <div><button class="btn btn-success" type="submit" >提交</button></div>

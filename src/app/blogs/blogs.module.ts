@@ -8,18 +8,20 @@ import {BlogsRoutingModule} from './blogs.routes';
 import {BlogListComponent} from './blog-list.component';
 import {MyPaginationComponent} from '../commons/my-pagination.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ModalModule, PaginationModule} from 'ngx-bootstrap';
+import {PaginationModule} from 'ngx-bootstrap';
 import {JsonpModule} from '@angular/http';
 import {BlogWriteComponent} from './blog-write.component';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {BlogUpdateComponent} from './blog-update.component';
+import {ButtonModelComponent} from '../commons/my-button-model.component';
 @NgModule({
   declarations: [
     BlogsComponent,
     BlogListComponent,
     BlogWriteComponent,
     BlogUpdateComponent,
-    MyPaginationComponent
+    MyPaginationComponent,
+    ButtonModelComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,6 @@ import {BlogUpdateComponent} from './blog-update.component';
     JsonpModule,
     CKEditorModule,
     PaginationModule.forRoot(),
-    ModalModule.forRoot(),
     BlogsRoutingModule
   ]
 })

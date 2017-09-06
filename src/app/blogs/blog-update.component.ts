@@ -6,8 +6,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {BlogsService} from './services/blogs.service';
 import {Blog} from './blog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import './ckeditor.loader';
-import 'ckeditor';
 @Component({
   template: `
     <br>
@@ -26,7 +24,7 @@ import 'ckeditor';
           </div>
         </div>
         <div>
-          <ckeditor formControlName="content" [(ngModel)]="blog.content" >
+          <ckeditor [config]="{extraPlugins: 'divarea'}" formControlName="content"  [(ngModel)]="blog.content" >
           </ckeditor>
         </div>
         <div><button class="btn btn-success" type="submit" >提交</button></div>

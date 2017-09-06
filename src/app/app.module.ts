@@ -6,6 +6,7 @@ import {AppRoutingModule} from './app.routes';
 import {MainModule} from './main/main.module';
 import {PageNotFoundComponent} from './not-found.component';
 import {HttpModule, JsonpModule} from '@angular/http';
+import {ModalModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
     AppRoutingModule,
     HttpModule,
     JsonpModule,
+    ModalModule.forRoot(),
     MainModule
   ],
   providers: [],
